@@ -1,1 +1,20 @@
-<p>product works!</p>
+<div class="card" style="width: 18rem">
+  <img
+    src="../assets/{{ this.product.photo }}"
+    class="card-img-top"
+    alt="..."
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ this.product.libelle }}</h5>
+    <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </p>
+
+    <button class="btn btn-danger" (click)="deleteNotif()">Delete</button>
+    &nbsp;
+    <button class="btn btn-warning" (click)="updateNotif()">Update</button>
+    &nbsp;
+    <button class="btn btn-outline-primary">Buy</button>
+  </div>
+</div>

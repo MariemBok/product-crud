@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../models/product.model';
+import { ProductService } from 'src/services/product.service';
 
 @Component({
   selector: 'app-main-product',
@@ -8,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class MainProductComponent implements OnInit {
   isForm: Boolean = false;
   buttonString: String = 'Add New Product';
+  listProduct: Product[] = [];
 
-  constructor() {}
+  constructor(private productService: ProductService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.productService
+      .getListProduct()
+      .subscribe((data: Product[]) => (this.listProduct = data));
+  }
   changePage() {
     this.isForm = !this.isForm;
     if (this.isForm) {
@@ -20,4 +27,6 @@ export class MainProductComponent implements OnInit {
       this.buttonString = 'Add New Product';
     }
   }
+  deleteProduct(p: Product) {}
+  updateProduct(p: Product) {}
 }

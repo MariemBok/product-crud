@@ -1,8 +1,8 @@
 {
   "products": [
-    { "id": 1, "title": "Bordguena", "photo":"orange.jpg" },
-    { "id": 2, "title": "L'avionde", "photo":"meat.jpg" },
-    { "id": 3, "title": "Jus", "photo":"juice.jpg" },
-    { "id": 4, "title": "Ghalla chey7a", "photo":"dryfruit.jpg" }
+    { "id": "1","code":"code", "libelle": "Bordguena","prixUnitaire":500,"categorie":"Food", "photo":"orange.jpg" },
+    { "id": "2","code":"code", "libelle": "L'avionde","prixUnitaire":510, "categorie":"Food","photo":"meat.jpg" },
+    { "id": "3", "code":"code","libelle": "Jus", "prixUnitaire":60,"categorie":"Food","photo":"juice.jpg" },
+    { "id": "4","code":"code", "libelle": "Ghalla chey7a","prixUnitaire":850,"categorie":"Food", "photo":"dryfruit.jpg" }
   ]
 }

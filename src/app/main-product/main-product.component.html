@@ -3,64 +3,14 @@
 </button>
 <br />
 <br />
-<div id="ProductList" *ngIf="!this.isForm">
-  <div class="row margin">
-    <div class="card col-3" style="width: 18rem">
-      <img src="../assets/orange.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card col-3" style="width: 18rem">
-      <img src="../assets/meat.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card col-3" style="width: 18rem">
-      <img src="../assets/juice.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card col-3" style="width: 18rem">
-      <img src="../assets/dryfruit.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-    <div class="card col-3" style="width: 18rem">
-      <img src="../assets/orange.jpg" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
+<div class="margin row" id="ProductList" *ngIf="!this.isForm">
+  <app-product
+    class="col-md-3"
+    *ngFor="let object of listProduct"
+    [product]="object"
+    (deleteEvent)="deleteProduct($event)"
+    (updateEvent)="updateProduct($event)"
+  ></app-product>
 </div>
 <div id="ProductForm" class="margin" *ngIf="this.isForm">
   <app-form-product></app-form-product>
