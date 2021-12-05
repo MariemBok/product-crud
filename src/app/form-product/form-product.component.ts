@@ -27,6 +27,10 @@ export class FormProductComponent implements OnInit {
     }
 
     this.productForm = this.builder.group({
+      id: [
+        this.product.libelle,
+        [Validators.required, Validators.minLength(3)],
+      ],
       title: [
         this.product.libelle,
         [Validators.required, Validators.minLength(3)],
@@ -44,6 +48,7 @@ export class FormProductComponent implements OnInit {
     console.log(this.selectedFile);
   }
   addProduct() {
+    this.product.id = this.productForm.value.id;
     this.product.libelle = this.productForm.value.title;
     this.product.prixUnitaire = this.productForm.value.price;
     this.product.photo = String(this.selectedFile);

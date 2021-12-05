@@ -1,14 +1,6 @@
 {
   "products": [
     {
-      "id": "1",
-      "code": "code",
-      "libelle": "Bordguenaaa",
-      "prixUnitaire": "530",
-      "categorie": "Food",
-      "photo": "orange.jpg"
-    },
-    {
       "id": "4",
       "code": "code",
       "libelle": "Ghalla chey7a",
@@ -17,25 +9,25 @@
       "photo": "dryfruit.jpg"
     },
     {
-      "libelle": "exemple",
-      "prixUnitaire": "870",
-      "photo": "orange.jpg",
-      "categorie": "food",
-      "id": "4Xa4ltJ"
-    },
-    {
-      "libelle": "etest",
-      "prixUnitaire": "850",
-      "photo": "juice.jpg",
-      "categorie": "food",
-      "id": "83vsL5_"
-    },
-    {
       "libelle": "mariem",
       "prixUnitaire": "98",
       "photo": "meat.jpg",
       "categorie": "food",
       "id": "PtLFX3X"
+    },
+    {
+      "libelle": "aaa",
+      "prixUnitaire": "85",
+      "photo": "juice.jpg",
+      "categorie": "food",
+      "id": "GQ_7t2U"
+    },
+    {
+      "libelle": "insaf",
+      "prixUnitaire": "80",
+      "photo": "orange.jpg",
+      "categorie": "food",
+      "id": "7-V_W-S"
     }
   ]
 }

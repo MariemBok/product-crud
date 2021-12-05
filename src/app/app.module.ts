@@ -7,7 +7,7 @@ import { ProductComponent } from './product/product.component';
 import { MainProductComponent } from './main-product/main-product.component';
 import { FormProductComponent } from './form-product/form-product.component';
 import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -19,7 +19,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     MainProductComponent,
     FormProductComponent,
     HeaderComponent,
-    FooterComponent,
     HomeComponent,
     NotFoundComponent,
   ],
