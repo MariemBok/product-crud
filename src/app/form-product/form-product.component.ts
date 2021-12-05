@@ -4,6 +4,7 @@ import { FormGroup, Form } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
 import { Product } from '../models/product.model';
+import { EmbeddedTemplateAst } from '@angular/compiler';
 
 @Component({
   selector: 'app-form-product',
@@ -11,6 +12,7 @@ import { Product } from '../models/product.model';
   styleUrls: ['./form-product.component.css'],
 })
 export class FormProductComponent implements OnInit {
+  selectedFile = null;
   private product!: Product;
   productForm!: FormGroup;
   @Input() updateProduct!: Product;
@@ -27,7 +29,7 @@ export class FormProductComponent implements OnInit {
     this.productForm = this.builder.group({
       title: [
         this.product.libelle,
-        [Validators.required, Validators.minLength(5)],
+        [Validators.required, Validators.minLength(3)],
       ],
       price: [
         this.product.prixUnitaire,
@@ -37,10 +39,14 @@ export class FormProductComponent implements OnInit {
       category: [this.product.categorie, Validators.required],
     });
   }
+  upload(event: any) {
+    this.selectedFile = event.target.files[0].name;
+    console.log(this.selectedFile);
+  }
   addProduct() {
     this.product.libelle = this.productForm.value.title;
     this.product.prixUnitaire = this.productForm.value.price;
-    this.product.photo = this.productForm.value.photo;
+    this.product.photo = String(this.selectedFile);
     this.product.categorie = this.productForm.value.category;
 
     this.addEvent.emit(this.product);

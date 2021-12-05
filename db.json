@@ -9,22 +9,6 @@
       "photo": "orange.jpg"
     },
     {
-      "id": "2",
-      "code": "code",
-      "libelle": "L'avionde",
-      "prixUnitaire": "11",
-      "categorie": "Food",
-      "photo": "meat.jpg"
-    },
-    {
-      "id": "3",
-      "code": "code",
-      "libelle": "Jus",
-      "prixUnitaire": "76",
-      "categorie": "Food",
-      "photo": "juice.jpg"
-    },
-    {
       "id": "4",
       "code": "code",
       "libelle": "Ghalla chey7a",
@@ -33,27 +17,25 @@
       "photo": "dryfruit.jpg"
     },
     {
-      "id": "5",
-      "code": "code",
-      "libelle": "Jus ekher",
-      "prixUnitaire": 66,
-      "categorie": "Food",
-      "photo": "juice.jpg"
-    },
-    {
-      "id": "6",
-      "code": "code",
-      "libelle": "L7am",
-      "prixUnitaire": 10,
-      "categorie": "Food",
-      "photo": "meat.jpg"
-    },
-    {
-      "libelle": "New Thing",
-      "prixUnitaire": "888",
+      "libelle": "exemple",
+      "prixUnitaire": "870",
       "photo": "orange.jpg",
       "categorie": "food",
-      "id": "uVf9Ak9"
+      "id": "4Xa4ltJ"
+    },
+    {
+      "libelle": "etest",
+      "prixUnitaire": "850",
+      "photo": "juice.jpg",
+      "categorie": "food",
+      "id": "83vsL5_"
+    },
+    {
+      "libelle": "mariem",
+      "prixUnitaire": "98",
+      "photo": "meat.jpg",
+      "categorie": "food",
+      "id": "PtLFX3X"
     }
   ]
 }

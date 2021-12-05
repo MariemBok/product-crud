@@ -29,6 +29,12 @@ export class MainProductComponent implements OnInit {
       this.buttonString = 'Add New Product';
     }
   }
+  deleteProduct(p: Product) {
+    let i = this.listProduct.indexOf(p);
+    this.productService
+      .deleteProduct(p.id)
+      .subscribe(() => this.listProduct.splice(i, 1));
+  }
   saveProduct(product: Product) {
     let i = this.listProduct.indexOf(product);
     if (i != -1) {
@@ -47,12 +53,7 @@ export class MainProductComponent implements OnInit {
     this.buttonString = 'Add New Product';
     this.inputProduct = new Product();
   }
-  deleteProduct(p: Product) {
-    let i = this.listProduct.indexOf(p);
-    this.productService
-      .deleteProduct(p.id)
-      .subscribe(() => this.listProduct.splice(i, 1));
-  }
+
   updateProduct(p: Product) {
     this.isForm = true;
     this.inputProduct = p;
