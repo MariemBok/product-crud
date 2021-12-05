@@ -1,4 +1,5 @@
-<form [formGroup]="productForm" (ngSubmit)="addProduct(productForm)">
+<br />
+<form [formGroup]="productForm" (ngSubmit)="addProduct()">
   <div class="row mb-3">
     <label class="col-sm-1 col-form-label margin__title">Title</label>
     <div class="col-sm-6">
@@ -44,5 +45,5 @@
     </div>
   </div>
   <br />
-  <button type="submit" class="btn btn-primary submit__button">Submit</button>
+  <button type="submit" class="btn btn-success submit__button">Submit</button>
 </form>

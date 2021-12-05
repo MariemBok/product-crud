@@ -1,7 +1,7 @@
-<button class="btn btn-success margin" (click)="changePage()">
+&nbsp;&nbsp;
+<button class="btn btn-primary margin" (click)="changePage()">
   {{ buttonString }}
 </button>
-<br />
 <br />
 <div class="margin row" id="ProductList" *ngIf="!this.isForm">
   <app-product
@@ -13,5 +13,8 @@
   ></app-product>
 </div>
 <div id="ProductForm" class="margin" *ngIf="this.isForm">
-  <app-form-product></app-form-product>
+  <app-form-product
+    (addEvent)="saveProduct($event)"
+    [updateProduct]="inputProduct"
+  ></app-form-product>
 </div>

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { FormGroup, Form } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { EventEmitter } from '@angular/core';
+import { Product } from '../models/product.model';
 
 @Component({
   selector: 'app-form-product',
@@ -9,22 +11,38 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./form-product.component.css'],
 })
 export class FormProductComponent implements OnInit {
+  private product!: Product;
   productForm!: FormGroup;
-  constructor() {}
+  @Input() updateProduct!: Product;
+  @Output() addEvent = new EventEmitter<Product>();
+  constructor(private builder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.productForm = new FormGroup({
-      title: new FormControl('', [
-        Validators.required,
-        Validators.minLength(3),
-      ]),
-      price: new FormControl('', [Validators.required]),
-      category: new FormControl('', [
-        Validators.required,
-        Validators.minLength(3),
-      ]),
-      photo: new FormControl('dryfruit.jpg', [Validators.required]),
+    if (this.updateProduct === null) {
+      this.product = new Product();
+    } else {
+      this.product = this.updateProduct;
+    }
+
+    this.productForm = this.builder.group({
+      title: [
+        this.product.libelle,
+        [Validators.required, Validators.minLength(5)],
+      ],
+      price: [
+        this.product.prixUnitaire,
+        [Validators.required, Validators.min(10)],
+      ],
+      photo: [this.product.photo, Validators.required],
+      category: [this.product.categorie, Validators.required],
     });
   }
-  addProduct(productForm: FormGroup) {}
+  addProduct() {
+    this.product.libelle = this.productForm.value.title;
+    this.product.prixUnitaire = this.productForm.value.price;
+    this.product.photo = this.productForm.value.photo;
+    this.product.categorie = this.productForm.value.category;
+
+    this.addEvent.emit(this.product);
+  }
 }
